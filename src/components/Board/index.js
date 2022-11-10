@@ -82,8 +82,6 @@ const Board = (props) => {
         }
       }, Math.floor(2000 / difficultyVal));
     }
-
-    console.log('Counter: ', counter);
   }, [
     arrOfDirections,
     endValue,
@@ -105,15 +103,11 @@ const Board = (props) => {
 
   const handleStart = () => {
     setStartValue(Math.ceil(Math.random() * Math.pow(difficultyVal, 2)));
+    setEndValue(null);
     setShowCorrect(false);
     setCounter(0);
-    setEndValue(null);
     setIsStarted(true);
   };
-
-  useEffect(() => {
-    console.log('End Value', endValue);
-  }, [arrOfDirections, endValue, startValue]);
 
   return (
     <Box className="board">
